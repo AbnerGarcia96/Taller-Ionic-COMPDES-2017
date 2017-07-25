@@ -1,0 +1,27 @@
+<!-- 
+
+Plugins a utilizar: 
+	Camera
+		$ ionic cordova plugin add cordova-plugin-camera
+		$ npm install -save @ionic-native/camera	
+
+	Vibration
+		$ ionic cordova plugin add cordova-plugin-vibration
+		$ npm install -save @ionic-native/vibration
+
+	Screenshot
+		$ ionic cordova plugin add com.darktalker.cordova.screenshot
+		$ npm install -save @ionic-native/screenshot
+
+-->
+
+<ion-header>
+	<ion-navbar>
+		<ion-title>Funcionalidad nativa</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<button ion-button (click)="tomarFoto()" full>Tomar una foto</button>
+	<button ion-button (click)="vibrar()" full>Vibrar</button>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>Agregar Nota</ion-title>
+		<ion-buttons end>
+			<button ion-button (click)="dismiss()">
+				<ion-icon name="close"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-list no-lines>
+	  <ion-item>
+	    <ion-label floating>Título</ion-label>
+	    <ion-input type="text" [(ngModel)]="nota.titulo" name="titulo"></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label floating>Descripción</ion-label>
+	    <ion-input type="text" [(ngModel)]="nota.descripcion" name="descripcion"></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label floating>Precio</ion-label>
+	    <ion-input type="number" [(ngModel)]="nota.precio" name="precio"></ion-input>
+	  </ion-item>
+	</ion-list>
+
+	<button ion-button full (tap)="editarNota(nota.$key)">Editar</button>
+</ion-content>

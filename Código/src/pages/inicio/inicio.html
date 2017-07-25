@@ -1,0 +1,34 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Inicio</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-list>
+		<ion-item-sliding *ngFor="let nota of notas | async">
+			<ion-item>
+				<h2>{{ nota.titulo }}</h2>
+				<h3>{{ nota.descripcion }}</h3>
+				<p>{{ nota.precio | currency:'HNL' }}</p>
+				<!-- ISO 4217 -->
+			</ion-item>
+			<ion-item-options side="right">
+				<button ion-button color="secondary" (tap)="editarNota(nota)">
+					<ion-icon name="create"></ion-icon>
+					Editar
+				</button>
+				<button ion-button color="danger" (tap)="borrarNota(nota)">
+					<ion-icon name="trash"></ion-icon>
+					Borrar
+				</button>
+			</ion-item-options>
+		</ion-item-sliding>
+	</ion-list>
+
+	<ion-fab right bottom>
+		<button ion-fab color="primary" (tap)="agregarNota()">
+			<ion-icon name="add"></ion-icon>
+		</button>
+	</ion-fab>
+</ion-content>
